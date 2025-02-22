@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #e9c686;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/************************** 
+ Topbar styles 
+***************************/
+.top-bar {
+    background-color: #e9c686;
+    border-bottom: 2px solid rgb(122, 71, 54);
+    border-radius: 10px;
+    border-top: 2px solid rgb(122, 71, 54);
+    color: rgb(216, 85, 15);
+    padding: 10px;
+    text-align:center;
+    display: flex;
+  align-items: center; 
+  }
+  /* Style for the logo */
+  .logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .nav__logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px; 
+    font-size: 150%;
+  }
+
+  /* Style for the search engine */
+  .search {
+    position: relative;
+    width: 20%;
+    margin: 10px 10px;
+  }
+  .search label {
+    position: relative;
+    width: 100%;
+  }
+  .search label input {
+    width: 70%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    text-decoration-color: black;
+    outline: none;
+    border: 1px solid var(--black2);
+  }
+  .search label ion-icon {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    font-size: 1.2rem;
+  }
+
+   /* Style for the right-content  */
+   .top-bar .right-content {
+    position: relative;
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    gap: 30px; /* Add a gap between flex items */
+   
+}
+
+.top-bar .right-content .Clock {
+    color: #000;
+    font-weight: 600;
+    margin-right: 10px; /* Additional spacing if needed */
+}
+
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    margin-left: 80%;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+    display: none;
+}
+
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  margin-right: 20px;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.footer {
+    border-top: 3px solid rgb(122, 71, 54);
+    border-radius:20px ;
+    background-color: var(--primary-color);
+  }
+  
+  .footer__bar {
+    margin-bottom: 0%;
+    flex-direction: row;
+    text-align: center;
+  }
+  .footer__bar {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+   
+  }
+  
+
+  table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+  .footer__bar p {
+    margin-top: 0%;
+    font-size: 14pt;
+    color: var(--extra-light);
+    font-weight: 600;
+   
+  }
+  
+  .socials {
+    margin-top: 0;
+    display: inline-flex;
+    border-spacing: 1px;
+  }
+  
+  .socials span {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+  }
+  
+  
+  

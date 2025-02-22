@@ -1,0 +1,18 @@
+1.	Home Page
+The landing page
+2.	Travel  Page
+Detailed information about the selected flight.
+Once a user selects a flight, this page provides detailed information about the flight, including departure and arrival times, duration, layovers, and pricing.
+3.	Reservation Page
+Collects passenger details and preferences.
+Components:
+Passenger information form.
+This is where users enter passenger information, select seats, and provide payment details. It should also include options for adding extras like baggage or insurance.
+4.	Reservation Receipt Page
+Displays a booking summary and confirmation details.
+After booking, users should see a confirmation page summarizing their flight details, booking reference, and payment confirmation. This page may also include options for printing or saving the itinerary.
+5.	About Us Page
+This page can include information about the company, its mission, and values, helping to build trust with users.
+Information about the company.
+Includes:
+Mission and vision.

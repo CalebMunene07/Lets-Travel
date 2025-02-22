@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Lets Travel</title>
+    <link rel="stylesheet" href="reservation.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- =============== Top-bar ================ -->
+        <div class="top-bar">
+         <div class="container-fluid clearfix">
+             <div class="carousel-item d-flex align-items-center">
+                 <img src="Travel App.png" class="logo" alt="Lets Travel Logo"> <!-- Fixed path -->
+                 <span class="nav__logo">LETS * TRAVEL ONLINE AGENCY</span> 
+             </div>  
+         </div>
+       
+         <div class="travel">Reservation</div>
+       
+         <div class="right-content">
+            
+             <div id="myLinks">
+                <a href="index.html">Home</a>
+                <a href="Travel.html">Services</a>
+                <a href="reservation.html">Book</a>
+                <a href="about.html">About</a>
+                <a href="data.html">Database</a>
+             </div>
+             <!-- Hamburger Menu -->
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                 <i class="fa fa-bars"></i>
+             </a>
+         </div>
+          <!-- Search-->
+          <div class="search">
+           <label>
+               <input type="text" placeholder="Search here">
+              
+           </label>
+       </div>
+       
+       </div>
+       <section class="section__container">
+       <h1>Passenger Reservation</h1>
+        <form id="reservation-form">
+            <!-- Passenger Information -->
+
+            <label for="id_passport">ID/Passport</label>
+            <input type="id" id="id_passport" name="id_passport" placeholder="ID/Passport number" required>
+
+
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="date">Travel Date</label>
+            <input type="date" id="date" name="date" required>
+
+
+            <!-- Seat Selection -->
+            <div class="seat-selection">
+                <label for="seat">Select Seat</label>
+                <select id="seat" name="seat">
+                    <option value="window">Window</option>
+                    <option value="aisle">Aisle</option>
+                    <option value="middle">Middle</option>
+                </select>
+            </div>
+
+            <!-- Extras -->
+            <div class="extras">
+                <label>Add Extras</label>
+                <div>
+                    <input type="checkbox" id="baggage" name="extras" value="baggage">
+                    <label for="baggage">Extra Baggage</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="insurance" name="extras" value="insurance">
+                    <label for="insurance">Travel Insurance</label>
+                </div>
+            </div>
+
+            <!-- Payment Information -->
+            <label for="payment">Payment Details</label>
+            <input type="text" id="payment" name="payment" placeholder="Enter your payment details" required>
+
+            <button type="submit">Submit Reservation</button>
+        </form>
+       </section>
+
+       <div class="contact-container">
+        <p><strong>Email:</strong> support@letstravel.com | <strong>Phone:</strong> +1 234 567 899</p>
+        </div>
+
+       <script>
+        document.getElementById('reservation-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+    
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+    
+            try {
+                const response = await fetch('http://localhost:3000/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+    
+                if (response.ok) {
+                    alert('Reservation submitted successfully!');
+                } else {
+                    alert('Failed to submit reservation.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the reservation.');
+            }
+        });
+    </script>
+       <script src="reservation.js"></script>
+        <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 <u><b>Paramount Tech Square</b></u>. All rights reserved.</p>
+  </footer>
+  </div>
+    
+</body>
+</html>

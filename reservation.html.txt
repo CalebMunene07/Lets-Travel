@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .extras {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .seat-selection {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Passenger Reservation</h1>
+        <form id="reservation-form">
+            <!-- Passenger Information -->
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="date">Travel Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <!-- Seat Selection -->
+            <div class="seat-selection">
+                <label for="seat">Select Seat</label>
+                <select id="seat" name="seat">
+                    <option value="window">Window</option>
+                    <option value="aisle">Aisle</option>
+                    <option value="middle">Middle</option>
+                </select>
+            </div>
+
+            <!-- Extras -->
+            <div class="extras">
+                <label>Add Extras</label>
+                <div>
+                    <input type="checkbox" id="baggage" name="extras" value="baggage">
+                    <label for="baggage">Extra Baggage</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="insurance" name="extras" value="insurance">
+                    <label for="insurance">Travel Insurance</label>
+                </div>
+            </div>
+
+            <!-- Payment Information -->
+            <label for="payment">Payment Details</label>
+            <input type="text" id="payment" name="payment" placeholder="Enter your payment details" required>
+
+            <button type="submit">Submit Reservation</button>
+        </form>
+    </div>
+</body>
+</html>

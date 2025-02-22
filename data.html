@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="data.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container-fluid clearfix">
+                <div class="carousel-item d-flex align-items-center">
+                    <img src="Travel App.png" class="logo" alt="Lets Travel Logo">
+                    <span class="nav__logo">LETS * TRAVEL ONLINE AGENCY</span> 
+                </div>  
+            </div>
+        
+            <!-- Search -->
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+
+            <div class="right-content">
+                <!-- Clock -->
+                <div id="Clock">
+                    <span id="hours"></span>:
+                    <span id="minutes"></span>:
+                    <span id="seconds"></span>
+                    <span id="meridiem"></span>
+                </div><p></p>
+                <div id="myLinks">
+                    <a href="index.html">Home</a>
+                    <a href="Travel.html">Services</a>
+                    <a href="reservation.html">Book</a>
+                    <a href="about.html">About</a>
+                </div>
+                <!-- Hamburger Menu -->
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+   
+        <h2>Reservation List</h2>
+
+        <table id="reservationsTable">
+            <tr>
+                <th>ID/Passport</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Travel Date</th>
+                <th>Seat</th>
+                <th>Extras</th>
+                <th>Payment</th>
+            </tr>
+        </table>
+
+        <footer class="footer">
+            <div class="section__container footer__bar">
+              <p>&copy; Copyright <script>document.write(new Date().getFullYear())</script> by <a href="Paramount.html" target="_blank">Paramount Tech Square.</a> All rights reserved.</p>
+              <div class="socials">
+                <span><i class="ri-facebook-fill"></i></span>
+                <span><i class="ri-twitter-fill"></i></span>
+                <span><i class="ri-instagram-line"></i></span>
+                <span><i class="ri-youtube-fill"></i></span>
+                <p>Subscribe & get latest news</p>
+              </div>
+            </div>
+        </footer>
+    </div>  
+
+    <script src="data.js"></script>
+
+    <script>
+        async function fetchReservations() {
+            try {
+                const response = await fetch('http://localhost:3000/reservation'); // Ensure your server is running
+                const reservations = await response.json();
+                
+                const table = document.getElementById('reservationsTable');
+                table.innerHTML = `<tr>
+                    <th>ID/Passport</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Travel Date</th>
+                    <th>Seat</th>
+                    <th>Extras</th>
+                    <th>Payment</th>
+                </tr>`; // Reset table headers
+                
+                reservations.forEach(reservation => {
+                    const row = document.createElement('tr');
+                    // Convert ISO date to local date format
+                const formattedDate = new Date(reservation.date).toLocaleDateString();
+                    row.innerHTML = `
+                        <td>${reservation.id_passport}</td>
+                        <td>${reservation.full_name}</td>
+                        <td>${reservation.email}</td>
+                        <td>${reservation.phone}</td>
+                         <td>${formattedDate}</td> <!-- Fixed travel date format -->
+                         <td>${reservation.seat}</td>
+                        <td>${reservation.extras ? reservation.extras : "None"}</td>
+                        <td>${reservation.payment}</td>
+                    `;
+                    table.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching reservation:', error);
+            }
+        }
+
+        fetchReservations(); // Load data on page load
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

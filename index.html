@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Travel Online Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js" defer></script> <!-- Added Ionicons -->
+</head>
+<body>
+    <div class="container">
+        <!-- =============== Top-bar ================ -->
+        <div class="top-bar">
+            <div class="container-fluid clearfix">
+                <div class="carousel-item d-flex align-items-center">
+                    <img src="Travel App.png" class="logo" alt="Lets Travel Logo"> <!-- Fixed path -->
+                    <span class="nav__logo">LETS * TRAVEL ONLINE AGENCY</span> 
+                </div>  
+            </div>
+        
+            <!-- Search-->
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon> <!-- Corrected placement of icon -->
+                </label>
+            </div>
+
+            <div class="right-content">
+                <!-- Clock-->
+                <div id="Clock">
+                    <span id="hours"></span>:
+                    <span id="minutes"></span>:
+                    <span id="seconds"></span>
+                    <span id="meridiem"></span>
+                </div><p></p>
+                <div id="myLinks">
+                    <a href="index.html">Home</a>
+                    <a href="Travel.html">Services</a>
+                    <a href="reservation.html">Book</a>
+                    <a href="about.html">About</a>
+                    <a href="data.html">Database</a>
+                </div>
+                <!-- Hamburger Menu -->
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+<div class="slogan"> With us you have Seamless booking And <br /> Facile travel all round the world . 
+    <span class="slogan"><img src="up to 50%.png" alt="" /></span>
+</div>
+
+<!-- For our booking -->
+<section class="section__container booking__container">
+    <p> Welcome to our Amble booking space <br>
+            We have vast Options </p>
+    <div class="booking__nav">
+      <span>Economy Class</span>
+      <span>Business Class</span>
+      <span>First Class</span>
+    </div>
+    <form>
+      <div class="form__group">
+        <div class="input__content">
+          <p>Where are you going ?</p>
+          <div class="input__group">
+            <label for="location">
+              <span><i class="ri-map-pin-line"></i></span> Location
+            </label>
+            <input type="text" id="location" name="location" placeholder="" required />
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  
+  
+  <section class="memories">
+    <div class="section__container memories__container">
+      <div class="memories__header">
+        <h3 class="section__header">
+          Travel to make memories all around the world
+        </h3>
+        <button class="view__all">View All</button>
+      </div>
+      <div class="memories__grid">
+        <div class="memories__card">
+          <span><i class="ri-calendar-2-line"></i></span>
+          <h4>Book & relax</h4>
+          <p>
+            With  us <b>"Book and Relax," </b> you can sit back, unwind, and enjoy the
+            journey while we take care of everything else.
+          </p>
+        </div>
+        <div class="memories__card">
+          <span><i class="ri-shield-check-line"></i></span>
+          <h4>Smart Checklist</h4>
+          <p>
+            Introducing Smart Checklist with us, the innovative solution
+            revolutionizing the way you travel with our airline.
+          </p>
+        </div>
+        <div class="memories__card">
+          <span><i class="ri-bookmark-2-line"></i></span>
+          <h4>Save More</h4>
+          <p>
+            From discounted ticket prices to exclusive promotions and deals,
+            we prioritize affordability without compromising on quality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section__container lounge__container">
+    <div class="lounge__image">
+      <img src="lounge-1.jpg" alt="lounge" />
+      <img src="lounge-2.jpg" alt="lounge" />
+      <img src="Inspiration mood.jpg" alt="lounge" />
+    </div>
+    <div class="lounge__content">
+      <h2 class="section__header">Unaccompanied Minor Lounge</h2>
+      <div class="lounge__grid">
+        <div class="lounge__details">
+          <h4>Experience Tranquility</h4>
+          <p>
+            Serenity Haven offers a tranquil escape, featuring comfortable
+            seating, calming ambiance, and attentive service.
+          </p>
+        </div>
+        <div class="lounge__details">
+          <h4>Elevate Your Experience</h4>
+          <p>
+            Designed for discerning travelers, this exclusive lounge offers
+            premium amenities, assistance, and private workspaces.
+          </p>
+        </div>
+        <div class="lounge__details">
+          <h4>A Welcoming Space</h4>
+          <p>
+            Creating a family-friendly atmosphere, The Family Zone is the
+            perfect haven for parents and children.
+          </p>
+        </div>
+        <div class="lounge__details">
+          <h4>A Culinary Delight</h4>
+          <p>
+            Immerse yourself in a world of flavors, offering international
+            cuisines, gourmet dishes, and carefully curated beverages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section__container travellers__container">
+    <h2 class="section__header">Best travell Destinations of the Month</h2>
+    <div class="travellers__grid">
+      <div class="travellers__card">
+        <img src="traveller-1.jpg" alt="traveller" />
+        <div class="travellers__card__content">
+          <img src="client-1.jpg" alt="client" />
+          <h4>Emily Johnson</h4>
+          <p>Dubai</p>
+        </div>
+      </div>
+      <div class="travellers__card">
+        <img src="traveller-2.jpg" alt="traveller" />
+        <div class="travellers__card__content">
+          <img src="client-2.jpg" alt="client" />
+          <h4>David Smith</h4>
+          <p>Paris</p>
+        </div>
+      </div>
+      <div class="travellers__card">
+        <img src="traveller-3.jpg" alt="traveller" />
+        <div class="travellers__card__content">
+          <img src="client-3.jpg" alt="client" />
+          <h4>Olivia Brown</h4>
+          <p>Singapore</p>
+        </div>
+      </div>
+      <div class="travellers__card">
+        <img src="traveller-4.jpg" alt="traveller" />
+        <div class="travellers__card__content">
+          <img src="client-4.jpg" alt="client" />
+          <h4>Daniel Taylor</h4>
+          <p>Malaysia</p>
+        </div>
+      </div>
+      <div class="travellers__card">
+        <img src="traveller-5.jpg" alt="traveller" />
+        <div class="travellers__card__content">
+          <img src="client-001 (1).jpg" alt="client" />
+          <h4>Samantha Chloe</h4>
+          <p>Nairobi</p>
+        </div>
+      </div>
+      
+      <div class="travellers__card">
+        <img src="UK.jpg" alt="traveller" />
+        <div class="travellers__card__content">
+          <img src="lewis-hamilton.jpg" alt="client" />
+          <h4>Lewis  Hamilton</h4>
+          <p>United Kingdom</p>
+        </div>
+      </div>
+
+      <div class="travellers__card">
+        <img src="madrid 6.jpg" alt="traveller" />
+        <div class="travellers__card__content">
+          <img src="Shakira.jpeg" alt="client" />
+          <h4>Shakira  Isabel</h4>
+          <p>Madrid</p>
+        </div>
+      </div>
+
+      <div class="travellers__card">
+        <img src="WashingtonDC-CapitolBuilding.jpg" alt="traveller" />
+        <div class="travellers__card__content">
+          <img src="nile.jpg" alt="client" />
+          <h4>Nile Brown</h4>
+          <p>Washington DC</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Get in touch with our team for any inquiries or assistance.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-info">
+        <h2>Reach Us</h2>
+        <p><strong>Email:</strong> support@letstravel.com</p>
+        <p><strong>Phone:</strong> +1 234 567 899</p>
+        <p><strong>Address:</strong> 122 Skyway Avenue, New York, NY, USA</p>
+        <p><strong>Working Hours:</strong> Mon - Fri: 9:00 AM - 5:00 PM</p>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="section__container footer__bar">
+      <p>&copy; Copyright <script>document.write(new Date().getFullYear())</script> by <a href="Paramount.html" target="_blank">Paramount Tech Square.</a> All rights reserved.
+      <div class="socials">
+        <span><i class="ri-facebook-fill"></i></span>&nbsp;
+        <span><i class="ri-twitter-fill"></i></span>&nbsp;
+        <span><i class="ri-instagram-line"></i></span>&nbsp;
+        <span><i class="ri-youtube-fill"></i></span>&nbsp;&nbsp;
+          <p >Subscribe  & get latest news</p>
+      </div>
+    </div>
+
+  </footer>
+
+  
+
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>

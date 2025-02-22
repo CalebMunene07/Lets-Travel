@@ -1,0 +1,238 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #e9c686;
+  }
+  .container {
+    position: relative;
+    width: 100%;
+  }
+  
+  /************************** 
+ Topbar styles 
+***************************/
+.top-bar {
+  background-color: #e9c686;
+  border-bottom: 3px solid rgb(122, 71, 54);
+  border-radius: 10px;
+  border-top: 3px solid rgb(122, 71, 54);
+  color: rgb(216, 85, 15);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-top:10px; /* Add space above the top-bar */
+}
+
+/* Style for the logo */
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.nav__logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px; 
+  font-size: 150%;
+}
+
+/* Style for the search engine */
+.search {
+  position: relative;
+  width: 20%;
+  margin: 10px 10px;
+}
+.search label {
+  position: relative;
+  width: 100%;
+}
+.search label input {
+  width: 70%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  text-decoration-color: black;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 1.2rem;
+}
+
+ /* Style for the right-content  */
+ .top-bar .right-content {
+  position: relative;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  gap: 20px; /* Add a gap between flex items */
+}
+
+.top-bar .right-content .Clock {
+  color: #000;
+  font-weight: 600;
+  margin-right: 10px; /* Additional spacing if needed */
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+  margin-left: 80%;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+
+/* Style navigation menu links */
+.topnav a {
+color: white;
+margin-right: 20px;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+background: black;
+display: block;
+position: absolute;
+right: 0;
+top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+
+.travel {
+  font-family: "Stencil", "Arial", sans-serif; 
+  font-size: 24px; /* Adjust font size */
+  font-weight: bold;
+  font-style: italic;
+  color: #e5533f;
+  margin-left: auto;
+  margin-right: 10px;
+  padding: 20px;
+  background-color: #e9c686; /* Optional: Background color */
+  border-radius: 10px; /* Optional: Rounded corners */
+  text-align: center; /* Center text inside the div */
+}
+
+  /* Hero Section */
+  /* Hero Section */
+.hero {
+  margin-top:10px;
+  text-align: center;
+  background: url('Flight home.png') no-repeat center center/cover; /* Set background image */
+  color: white;
+  padding: 100px 20px;
+  height: 320px; /* Adjust height to increase the image size */
+  position: relative;
+  align-items: center;
+ 
+}
+
+/* Optional: Hide the .slogan image if it's not needed anymore */
+.hero .slogan img {
+  display: none;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero .cta-button {
+  background: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.hero .cta-button:hover {
+  background: #e5533f;
+}
+
+  /* Featured Destinations */
+  .destinations {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .destinations h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+  }
+  
+  .destination-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .destination {
+    background: #f4f4f4;
+    border-radius: 5rem;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgb(122, 71, 54);
+  }
+  
+  .destination img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .destination h3 {
+    margin: 10px 0;
+  }
+  
+  .destination p {
+    padding: 0 10px 10px;
+  }
+  
+  .contact-container {
+    text-align: center; /* Centers text horizontally */
+    padding: 20px; /* Optional: Adds some spacing around the content */
+  }
+  /* Footer */
+  .footer {
+    border-top: 4px solid rgb(122, 71, 54);
+    border-radius:30px ;
+    background-color: var(--primary-color);
+    
+    color: var(--extra-light);
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  
