@@ -3,35 +3,40 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { Pool } = require('pg');
 
-// Initialize Express app
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // Use environment variable for port
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// PostgreSQL connection (for Render)
+// PostgreSQL connection
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
+    user: process.env.DB_USER || 'postgres',
+    host: process.env.DB_HOST || 'localhost',
+    database: process.env.DB_NAME || 'Booking',
+    password: process.env.DB_PASSWORD || 'yourpassword',
+    port: process.env.DB_PORT || 5432,
 });
 
-// API endpoint to insert data into the reservations table
+// Root route to prevent "Cannot GET /" error
+app.get('/', (req, res) => {
+    res.send('Welcome to Let’s Travel API!');
+});
+
+// API routes
 app.post('/submit', async (req, res) => {
     try {
-        console.log('Received data:', req.body);
         const { id_passport, full_name, email, phone, date, seat, payment } = req.body;
-
         if (!id_passport || !full_name || !email || !phone || !date || !seat || !payment) {
             return res.status(400).json({ error: 'All fields are required.' });
         }
 
-        const query = `INSERT INTO reservation (id_passport, full_name, email, phone, date, seat, payment) VALUES ($1, $2, $3, $4, $5, $6, $7)`;
-        const values = [id_passport, full_name, email, phone, date, seat, payment];
+        const query = `INSERT INTO reservation (id_passport, full_name, email, phone, date, seat, payment) 
+                       VALUES ($1, $2, $3, $4, $5, $6, $7)`;
+        await pool.query(query, [id_passport, full_name, email, phone, date, seat, payment]);
 
-        await pool.query(query, values);
         res.status(200).json({ message: 'Reservation submitted successfully!' });
     } catch (error) {
         console.error('Error inserting reservation:', error);
@@ -39,7 +44,7 @@ app.post('/submit', async (req, res) => {
     }
 });
 
-// Endpoint to fetch stored reservations
+// Fetch reservations
 app.get('/reservation', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM reservation');
