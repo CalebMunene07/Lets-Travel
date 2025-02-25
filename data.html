@@ -83,10 +83,18 @@
     <script>
         async function fetchReservations() {
             try {
-                const response = await fetch('http://localhost:3000/reservation'); // Ensure your server is running
+                const response = await fetch('https://lets-travel-x4bn.onrender.com/reservation'); // Use the correct API URL
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
                 const reservations = await response.json();
-                
+    
                 const table = document.getElementById('reservationsTable');
+                if (!table) {
+                    console.error("Error: Table with ID 'reservationsTable' not found.");
+                    return;
+                }
+    
                 table.innerHTML = `<tr>
                     <th>ID/Passport</th>
                     <th>Full Name</th>
@@ -97,18 +105,17 @@
                     <th>Extras</th>
                     <th>Payment</th>
                 </tr>`; // Reset table headers
-                
+    
                 reservations.forEach(reservation => {
                     const row = document.createElement('tr');
-                    // Convert ISO date to local date format
-                const formattedDate = new Date(reservation.date).toLocaleDateString();
+                    const formattedDate = new Date(reservation.date).toLocaleDateString();
                     row.innerHTML = `
                         <td>${reservation.id_passport}</td>
                         <td>${reservation.full_name}</td>
                         <td>${reservation.email}</td>
                         <td>${reservation.phone}</td>
-                         <td>${formattedDate}</td> <!-- Fixed travel date format -->
-                         <td>${reservation.seat}</td>
+                        <td>${formattedDate}</td> <!-- Fixed travel date format -->
+                        <td>${reservation.seat}</td>
                         <td>${reservation.extras ? reservation.extras : "None"}</td>
                         <td>${reservation.payment}</td>
                     `;
@@ -118,9 +125,9 @@
                 console.error('Error fetching reservation:', error);
             }
         }
-
+    
         fetchReservations(); // Load data on page load
-
+    
         function myFunction() {
             var x = document.getElementById("myLinks");
             if (x.style.display === "block") {
@@ -130,5 +137,6 @@
             }
         }
     </script>
+    
 </body>
 </html>
