@@ -1,40 +1,31 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const path = require('path');  // Import path module
 const { Pool } = require('pg');
+require('dotenv').config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static files (if needed)
-app.use(express.static(path.join(__dirname, 'public'))); // Ensure you have a "public" folder
-
 // PostgreSQL connection
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'Booking',
-    password: '@Kalib07',
-    port: 5432,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
 
-// Default route to prevent "Cannot GET /" error
+// Default route
 app.get('/', (req, res) => {
     res.send('Welcome to the Reservation API!');
 });
 
-// Serve data.html if you want a webpage instead of a text response
-app.get('/data', (req, res) => {
-    res.sendFile(path.join(__dirname, 'data.html'));
-});
-
-// API endpoint to insert data into reservations table
+// API to insert reservation data
 app.post('/submit', async (req, res) => {
     try {
         console.log('Received data:', req.body);
@@ -58,7 +49,7 @@ app.post('/submit', async (req, res) => {
     }
 });
 
-// Fetch stored reservations
+// API to fetch stored reservations
 app.get('/reservation', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM reservation');
