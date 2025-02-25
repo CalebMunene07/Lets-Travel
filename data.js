@@ -1,4 +1,11 @@
 
+
+fetch("https://lets-travel-x4bn.onrender.com/reservation")
+   .then(response => response.json())
+   .then(data => console.log(data))
+   .catch(error => console.error("Error fetching reservations:", error));
+
+
 const spans = document.querySelectorAll('.booking__nav span');
 
 spans.forEach((span) => {

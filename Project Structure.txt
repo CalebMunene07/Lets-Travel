@@ -1,0 +1,13 @@
+Lets-Travel/
+│── backend/                # Backend folder (Node.js + Express server)
+│   ├── server.js           # Express server handling API requests
+│   ├── package.json        # Dependencies and project info for backend
+│   ├── package-lock.json   # Lock file for npm dependencies
+│   ├── node_modules/       # Installed npm dependencies (not committed to Git)
+│── frontend/               # Frontend folder (if separated, otherwise files are in root)
+│   ├── index.html          # Main HTML file
+│   ├── styles.css          # CSS styles
+│   ├── script.js           # JavaScript for frontend logic
+│── .gitignore              # Files to ignore in Git (e.g., node_modules, .env)
+│── .env                    # Environment variables (not committed to Git)
+│── README.md               # Documentation
