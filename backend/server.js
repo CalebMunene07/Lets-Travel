@@ -21,16 +21,15 @@ const pool = new Pool({
     },
 });
 
-// Serve static frontend files
-app.use(express.static(path.join(__dirname, '../frontend')));
+// ✅ Serve static files (CSS, JS) from the root directory
+app.use(express.static(path.join(__dirname, '../')));
 
-// Serve index.html
+// ✅ Serve index.html from the root folder
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+    res.sendFile(path.join(__dirname, '../index.html'));
 });
 
-// API routes...
-// (Keep your /submit and /reservation routes unchanged)
+// API routes (unchanged)
 
 // Start the server
 app.listen(port, () => {
