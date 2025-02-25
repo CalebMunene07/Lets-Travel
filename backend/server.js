@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 const { Pool } = require('pg');
 require('dotenv').config();
 
@@ -20,9 +21,9 @@ const pool = new Pool({
     },
 });
 
-// Default route
+// Serve index.html from the backend folder
 app.get('/', (req, res) => {
-    res.send('Welcome to the Reservation API!');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // API to insert reservation data
