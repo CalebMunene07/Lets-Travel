@@ -21,15 +21,29 @@ const pool = new Pool({
     },
 });
 
-// ✅ Serve static files (CSS, JS) from the root directory
+// Serve static files (CSS, JS) from the root directory
 app.use(express.static(path.join(__dirname, '../')));
 
-// ✅ Serve index.html from the root folder
+// Serve index.html from the root folder
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
 });
 
-// API routes (unchanged)
+// Serve data.html from the root folder
+app.get('/data', (req, res) => {
+    res.sendFile(path.join(__dirname, '../data.html'));
+});
+
+// API to fetch data from the database
+app.get('/api/reservations', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM reservation');
+        res.json(result.rows); // Send the data as JSON
+    } catch (error) {
+        console.error('Error fetching reservations:', error);
+        res.status(500).json({ error: 'Failed to fetch reservations.' });
+    }
+});
 
 // Start the server
 app.listen(port, () => {
